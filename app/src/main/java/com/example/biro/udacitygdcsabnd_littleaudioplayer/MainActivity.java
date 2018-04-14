@@ -2,6 +2,7 @@ package com.example.biro.udacitygdcsabnd_littleaudioplayer;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,16 +21,28 @@ public class MainActivity extends AppCompatActivity {
         // MediaPlayer class
         mp = MediaPlayer.create(this, R.raw.bensound_betterdays);
 
+        playAudio(mp);
+        pauseAudio(mp);
     }
 
-    public void playAudio(View view)
+    private void playAudio(final MediaPlayer mp)
     {
-        this.mp.start();
+        (findViewById(R.id.play_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mp.start();
+            }
+        });
+
     }
 
-    public void pauseAudio(View view)
+    private void pauseAudio(final MediaPlayer mp)
     {
-        this.mp.pause();
+        (findViewById(R.id.pause_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mp.pause();
+            }
+        });
     }
-
 }

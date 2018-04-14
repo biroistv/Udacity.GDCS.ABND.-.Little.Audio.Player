@@ -10,7 +10,7 @@ The music from: www.bensound.com
 * Name: [BETTER DAYS](https://www.bensound.com/royalty-free-music/track/better-days) 
 
 
-## Pre-Requiments
+## Pre-requisites
 
 * Android SDK Version: 27
 * Minimum SDK Version: 15

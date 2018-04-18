@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
 
         playAudio(mp);
         pauseAudio(mp);
+
+        // Displaying a toast message when the current audio is finished.
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                Toast toast = Toast.makeText(MainActivity.this, "Finished", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
     }
 
     private void playAudio(final MediaPlayer mp)
